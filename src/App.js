@@ -9,17 +9,29 @@ import AddNode from './components/AddNode'
 let llist = new LinkedList();
 
 function App() {
-  const initialState = [{ id:null, node: new Node() }]
+  const initialState = [ { id:null, node: new Node() }]
   // const [mNodes, setNodes] = useState([{data:null, next:null, id:null}])
-const [mNodes, setNodes] = useState(initialState)
+const [mNodes, setNodes] = useState([ 
+  { id:null, data:null },
+])
 
 
-  const addNode = (node) => {
+// const datas = [{id: 0,data:54},
+//               {id: 1,data:3},
+//               {id: 2,data:22},]
+// const [ids, setIDs] = useState()
+  //const [ids, setIds] = u 
+  // initialState.id
+
+  const addNode = ({id, data}) => {
     // call this if user wishes to Add a Node to our LinkedList
-    llist.push(new Node(node.data));
+    llist.push(new Node(data));
     console.log("llist:  ",llist);
-    // console.log("removed-Node:  ",llist.pop())
-    const new_node = { ...node }
+    id = llist.getPosition();
+
+    // console.log('Node-id: ', {nodeId, ...node});
+    // const new_node = {nodeId, ...node }
+    const new_node = {id, data }
     setNodes([...mNodes, new_node])
 
   }//addNode
@@ -38,11 +50,22 @@ const [mNodes, setNodes] = useState(initialState)
   }//insertAtPosition
 
   const removeNode = (node) => {
-    llist.removeElement(node);
-    console.log("llist (After REMOVE-node called):  ",llist)
+    // let key = 22;
+    // let id,data = {...node}
+    setNodes(mNodes.filter((id) =>
+      // console.log("Node->id: ", node, "->", id),
+      node.id === id ? {...node, data: !node.data}: node
+      // console.log("node[id] ", ...node)
+    ))
+    // id = llist.getPosition();
+    console.log("DEBUG: Attempting to remove node: ",node)
+    // mNodes.map((data) =>
+    //   node.data === data ? llist.removeElement(node, data) : node
+    // )
+   
   }//removeNode
 
-
+  // onDelete={removeNode}
 
   return (
     <div className="container">
@@ -51,6 +74,7 @@ const [mNodes, setNodes] = useState(initialState)
       <Nodes key={mNodes}
             nodes={mNodes}
             onAdd={addNode}
+            onDelete={removeNode}
             />
     </div>
   );

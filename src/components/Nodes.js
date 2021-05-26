@@ -2,7 +2,7 @@ import Tnode from './ANode.js';
 /**
  * This Creates a 'Node'-React-component
  *  */
-const Nodes = ({nodes, onAdd}) => {
+const Nodes = ({nodes, onAdd, onDelete}) => {
 
     return (
         <div className='linked_list'>
@@ -11,6 +11,7 @@ const Nodes = ({nodes, onAdd}) => {
                 <Tnode  key={node.id} 
                         node={node}  
                         onAdd={onAdd}
+                        onDelete={onDelete}
                 /> 
             )) : 'no nodes'}
         </div>

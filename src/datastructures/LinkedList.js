@@ -87,21 +87,36 @@ export default class linkedList {
         console.log('Remove from: [', position, ']')
 
     }
-    
+
     removeElement(node, key){
-        console.log('remove elmnt: ', elmnt)
+        console.log('remove elmnt: ', node, ' -Key: ', key);
         let temp = this.head;
         let prev = null;
 
         // if the head holds the key that we want to= delete
         if(temp != null && (temp.data == key)){
             this.head = temp.next;
-            delete temp;
+            // delete temp;
             return;
         }//if
+        else {    
+            // else,
+                // Search for the key to be deleted by
+                // keeping track of the 'previous' node 
+            while(temp != null && (temp.data != key)){
+                prev = temp;
+                temp = temp.next;
+            }//while
 
-        // else search for the key to be deleted
+            if(temp == null){ // the node was not in the linked_list
+                return;
+            }
 
+            // Re-Link Nodes
+            prev.next = temp.next;
+            // delete temp;    // deallocate temp-Node
+
+        }
     }
 
     getPosition(){

@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react'
 import Node from '../datastructures/Node'
 import LinkedList from '../datastructures/LinkedList'
+import DeleteNode from './DeleteNode'
 
 
 
@@ -16,7 +17,7 @@ const AddNode = ({onAdd}) => {
     const onSubmit = (e) => {
         e.preventDefault();
         if(!data){
-            alert('Please insert Node->data')
+            // alert('Please insert Node->data')
             return;
         }
         if(data !== null){
@@ -35,8 +36,9 @@ const AddNode = ({onAdd}) => {
                 <label>Node</label>
                 <input type='text' placeholder='Add Node'
                         value={data} onChange={(e) => setData(e.target.value)}/>
+                {/* <DeleteNode    /> */}
             </div>
-
+            {/* <input type='submit' value='Remove Node' className='btn btn-block'/> */}
             <input type='submit' value='Add Node' className='btn btn-block'/>
         </form>
     )
