@@ -87,6 +87,7 @@ export default class linkedList {
         console.log('Remove from: [', position, ']')
 
     }
+    
     removeElement(node, key){
         console.log('remove elmnt: ', elmnt)
         let temp = this.head;
