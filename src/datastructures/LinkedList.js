@@ -25,7 +25,7 @@ import Node  from './Node.js';
 export default class linkedList {
     constructor(){
         this.head = null;
-        this.position = -1;
+        this.id = -1;
         this.size = 0;
         //console.log("Created A Linked List!");
     }
@@ -33,7 +33,7 @@ export default class linkedList {
     push(node){
         // this is insert-at-end of linked-list
         let root = this.head;
-        this.position++;
+        this.id++;
         if(root === null){ // (1) check if list is empty
             this.head = node;
             return;
@@ -96,6 +96,7 @@ export default class linkedList {
         // if the head holds the key that we want to= delete
         if(temp != null && (temp.data == key)){
             this.head = temp.next;
+            this.size--;
             // delete temp;
             return;
         }//if
@@ -119,12 +120,12 @@ export default class linkedList {
         }
     }
 
-    getPosition(){
-        if(this.position === -1){
+    getId(){
+        if(this.id === -1){
             return -1;
         }
         else{
-            return this.position;
+            return this.id;
         }
     }//get the position of node in the linked-list
 
