@@ -1,3 +1,4 @@
+/*
 import * as d3 from 'd3'
 import './svg.css'
 
@@ -26,4 +27,4 @@ export default function createSvgContainer(){
     .attr('r', 80)
     .attr('cx', 200 ).attr('cy', 300)
     .attr('fill', '#7CE8D5').attr('stroke', 'red');
-}
+} */

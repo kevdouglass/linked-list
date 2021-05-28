@@ -6,8 +6,6 @@ import { useRef, useEffect } from 'react'
  * This Creates a 'Node'-React-component
  *  */
 const Nodes = ({nodes, onAdd, onDelete}) => {
-    // const Nodes = () => {
-
     
     //     let d3Container = useRef(null);
     // console.log("SvgRef  " , d3Container)

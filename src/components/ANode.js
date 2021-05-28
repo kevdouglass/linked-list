@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types'
 import {FaTimes} from 'react-icons/fa'
-// import d3, { svg } from 'd3'
-import { useRef } from 'react'
+import * as d3 from 'd3'
+import { useRef, useEffect } from 'react'
 
 /**
  * This creates a Single-Node, React-component and renders an SVG inside of a Div
  */
 
 const Tnode = ({node, onDelete}) => {
-    // const Tnode = ({node}) => {
-    // let divNode = document.createElement('div');
-    // let width = 960,
-    //     height = 500;
-    // let mySvg = d3.select(divNode).append('svg').attr("width", width).attr("height",height);
-    // let defs = svg.append("defs");
-    // defs.append("clipPath").attr("id", "circle1").append("circle").attr("cx", 350).attr("cx",350)
-    // let svgRef = useRef();
-    // console.log("SvgRef  " , svgRef)
-    // console.log("onDelete ", node, "  in NodesCOmpnent: ", onDelete)
+    
+    // const ref = useRef()
 
+    // useEffect( () => {
+    //     draw();
+    // })
+
+    // const draw = () => {
+    //     d3.select('div').append('p').text('Hello WOrld')
+    // }
+    // d3.select('.node').selectAll('svg').datum(node).append('svg')
 
     if(node.id !== null){
         // console.log("created react-node: ", node)

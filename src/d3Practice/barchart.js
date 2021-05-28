@@ -1,4 +1,4 @@
-import * as d3 from 'd3'
+// import * as d3 from 'd3'
 
 // let divs = d3.select('div').append('p').text(mNodes.map((node) => node.data))
   // d3.selectAll('p').style('color', 'blue')
@@ -25,7 +25,7 @@ import * as d3 from 'd3'
 // d3.axisTop()
 // d3.axisLeft()
 // d3.axisRight()
-
+/* 
 export default function createBarChart(dataSet) {
   let svgWidth = 500, svgHeight=300, barPadding=5;
   let barWidth= (svgWidth / dataSet.length); // evenly space the barset
@@ -88,4 +88,4 @@ export default function createBarChart(dataSet) {
 
 
 }
-  
+  */
