@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Nodes from './components/Nodes'
 // import Tnode from './components/ANode'
@@ -19,25 +19,31 @@ function App() {
     { id:null, data:null },
   ]);
 
-  // let nodes = [88,100,56,128,190,37,120, 160]
-  // let nodes = [4,1,8,2,7,3];
-  
-
+/**
+ *  D3 circle+text code
+ * let data = [1,2,3,4,5];
+      let svg= d3.select("svg").attr("height", "400").attr("width", "500").style("background","red");
+      
+      let g_circ = svg.selectAll("g").data(data).enter().append("g").append("circle").attr("r", "21").attr("cx", (d) => d*89).attr("cy", "100").style("color", "red").text((d)=>d); //("color", "blue");
+      //let circ 
+      //let g_text = svg.selectAll('g').append("text").data(data)
+      let g_text = svg.selectAll('g').data(data).append('text').text((d) => d).attr("x", (d) => d*89).attr("y", "100").attr("font",24).style("fill","white");
+ * 
+ *  */
   const addNode = ({id, data}) => {
     // call this if user wishes to Add a Node to our LinkedList
     llist.push(new Node(data));
+    
     id = llist.getId();
-
+    // llist.pushDiv(new Node(data));
+    console.log(llist)
     const new_node = {id, data };
     setNodes([...mNodes, new_node]);
-    // console.log("Adding? ",llist)
   };//addNode
 
   const removeNode = (node) => {
-    console.log("Remove-Node: ", node);
-    console.log("can-I (REMOVE) ",llist);
+
     llist.removeElement(node, node.data);
-    // llist.removeFrom(node.id)
 
     setNodes(mNodes.filter((curNode) =>
         curNode.id !== node.id 

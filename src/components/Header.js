@@ -9,7 +9,7 @@ import { color } from 'd3'
 const Header = ({ title }) => {
     
     const d3Ref = useRef()
-    console.log("d3.select  ",d3.select('h1'))
+    // console.log("d3.select  ",d3.select('h1'))
     // let header1 = d3.select('h1')
     //                 .style('color', 'red')
     //                 .attr('class', 'heading1')
@@ -17,7 +17,7 @@ const Header = ({ title }) => {
     
     return (
         // <header className='header'>
-            <h1 ref={d3Ref}>{title} </h1>
+            <h1 ref={d3Ref}> {title} </h1>
         // </header>
     )
 }

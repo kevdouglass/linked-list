@@ -9,16 +9,6 @@ import { useRef, useEffect } from 'react'
 
 const Tnode = ({node, onDelete}) => {
     
-    // const ref = useRef()
-
-    // useEffect( () => {
-    //     draw();
-    // })
-
-    // const draw = () => {
-    //     d3.select('div').append('p').text('Hello WOrld')
-    // }
-    // d3.select('.node').selectAll('svg').datum(node).append('svg')
 
     if(node.id !== null){
         // console.log("created react-node: ", node)

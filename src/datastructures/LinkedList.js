@@ -27,26 +27,67 @@ export default class linkedList {
         this.head = null;
         this.id = -1;
         this.size = 0;
+        this.div = null;
         //console.log("Created A Linked List!");
+    }
+    createDiv(node){
+        let adiv = document.createElement('div')
+        adiv.style.width = '100px';
+        adiv.style.height = '100px';
+        adiv.style.background = 'steelblue';
+        adiv.style.color = 'white';
+        adiv.textContent = node.data;
+        document.body.appendChild(adiv)
+
+        // return adiv;
+    }
+    createSVG(node){
+        // let svg = document.createElement('svg').append('circle')
+        svg.style.height='210';
+        svg.style.width = '500';
+        
+        let svgLine = document.createElement('line')
+        
+
+        let circ = document.createElement('circle')
+        // circ.style.
+        svg.appendChild(svgLine);
+        // svg.style.width = '100px';
+        // svg.style.height = '100px';
+        // svg.style.background = 'steelblue';
+        // svg.style.color = 'white';
+        let line = document.createTextNode(node.data);
+        svg.appendChild(line)
+        // svg.textContent = node.data;
+        document.body.appendChild(svg)
+
+        // return adiv;
     }
 
     push(node){
         // this is insert-at-end of linked-list
         let root = this.head;
+        let divRoot = this.head;
         this.id++;
-        if(root === null){ // (1) check if list is empty
+        if(root === null && divRoot === null){ // (1) check if list is empty
             this.head = node;
+            this.div = this.createSVG(node); //createSVG  createDiv
+            // this.divs = document.createElement('div').className('linkedListNode').innerHtml(node)
             return;
         }
         else {
             // let current; 
             let current = this.head; // to store current
+            let currentDiv = this.head;
 
-            while (current.next){
+            while (current.next && currentDiv.next){
                 current = current.next;
+                currentDiv = currentDiv.next;
             }//while
             //add the node
+            // currentDiv = document.createElement('div').className('linkedListNode').innerHtml(node)
             current.next = node;
+            currentDiv.next = this.createSVG(node);
         }
         this.size++;
     }//push
@@ -89,7 +130,7 @@ export default class linkedList {
     }
 
     removeElement(node, key){
-        console.log('remove elmnt: ', node, ' -Key: ', key);
+        // console.log('remove elmnt: ', node, ' -Key: ', key);
         let temp = this.head;
         let prev = null;
 
@@ -146,6 +187,57 @@ export default class linkedList {
     //         node = node.next;
     //     }
     // }//makeList
+    // pushDiv(node){
+    //     // this is insert-at-end of linked-list
+    //     let root = this.head;
+    //     // let divRoot = this.head;
+    //     // this.id++;
+    //     if(root === null){ // (1) check if list is empty
+    //         // this.div = node;
+    //         this.div = document.createElement('div')
+    //         this.div.style.width = '100px';
+    //         this.div.style.height = '100px';
+    //         this.div.style.background = 'steelblue';
+    //         this.div.style.color = 'white';
+    //         this.div.textContent = node.data;
+    //         // .className('linkedListNode').innerHtml(node)
+    //         return;
+    //     }
+    //     else {
+    //         // let current; 
+    //         let current = this.head; // to store current
+    //         // let currentDiv = this.head;
+
+    //         while (current.next){
+    //             current = current.next;
+    //             // currentDiv = currentDiv.next;
+    //         }//while
+    //         //add the node
+    //         // currentDiv = document.createElement('div').className('linkedListNode').innerHtml(node)
+    //         current.next = document.createElement('div')
+    //         this.div.style.width = '100px';
+    //         this.div.style.height = '100px';
+    //         this.div.style.background = 'steelblue';
+    //         this.div.style.color = 'white';
+    //         this.div.textContent = node.data;
+    //     }
+    //     this.size++;
+    // }//push
+
+    // makeDiv(id, data){
+    //     let div = this.head;
+    //     while(div !== null){
+    //         console.log('make Div: ', div.data)
+    //         let elem = document.createElement('div')
+    //         elem.style.width = '100px';
+    //         elem.style.height = '100px';
+    //         elem.style.background = 'red';
+    //         elem.style.color ='white';
+    //         elem.textContent = data;
+    //         document.body.appendChild(elem);
+    //         div = div.next;
+    //     }
+    // }
 
     // makeList(){
     //     let node = this.head;

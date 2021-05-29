@@ -24,6 +24,11 @@ const Nodes = ({nodes, onAdd, onDelete}) => {
             to next props to decide whether to rerender.
         */
 
+            // let prev = document.getElementsByClassName('node')
+            // console.log("Prev:", prev)
+            // let div = document.createElement('div');
+            // console.log("DIv ",div.compareDocumentPosition)
+
 
     return (
         <div className='linked_list'>
